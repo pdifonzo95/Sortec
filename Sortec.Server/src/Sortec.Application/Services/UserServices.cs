@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Sortec.Application.Interfaces;
 using Sortec.Domain.Entities;
+using Sortec.Domain.Interface;
 using Sortec.Infrastructure.Context;
 using Sortec.Infrastructure.Helpers;
 
@@ -10,11 +11,19 @@ namespace Sortec.Application.Services
     {
         private readonly SortecDbContext _context;
         private readonly CryptoHelper _cryptoHelper;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public UserServices(SortecDbContext context, CryptoHelper cryptoHelper)
+        public UserServices(SortecDbContext context, CryptoHelper cryptoHelper, IUnitOfWork unitOfWork)
         {
             this._context = context;
             this._cryptoHelper = cryptoHelper;
+            this._unitOfWork = unitOfWork;
+        }
+
+        public async Task<Response<IEnumerable<User>>> GetAllUsersAsync()
+        {
+            var users = await _unitOfWork.Users.GetAllAsync();
+            return users;
         }
 
         public async Task<Response<User>> ValidateUser(string userName, string password)
