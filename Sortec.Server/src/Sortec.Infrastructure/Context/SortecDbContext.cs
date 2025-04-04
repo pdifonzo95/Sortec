@@ -1,14 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Sortec.Domain.Entities;
 
 namespace Sortec.Infrastructure.Context
 {
-    public abstract partial class SortecDbContext : DbContext
+    public class SortecDbContext : DbContext
     {
         public SortecDbContext(DbContextOptions<SortecDbContext> options) : base(options) { }
+        public DbSet<User> Users { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            optionsBuilder.UseLazyLoadingProxies();
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

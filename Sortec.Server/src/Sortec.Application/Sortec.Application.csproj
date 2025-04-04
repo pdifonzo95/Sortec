@@ -11,10 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Commons\" />
-    <Folder Include="Extensions\" />
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\Sortec.Domain\Sortec.Domain.csproj" />
+    <ProjectReference Include="..\Sortec.Infrastructure\Sortec.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

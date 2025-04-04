@@ -4,6 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>44b8122a-cb63-4c69-97d0-3bf77e437aae</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,10 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Configurations\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\Sortec.Application\Sortec.Application.csproj" />
     <ProjectReference Include="..\Sortec.Infrastructure\Sortec.Infrastructure.csproj" />
   </ItemGroup>
 
