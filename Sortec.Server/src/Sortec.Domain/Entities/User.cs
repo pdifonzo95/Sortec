@@ -19,6 +19,9 @@ namespace Sortec.Domain.Entities
         public bool State { get; set; }
         public DateTime? LastLoginTimestamp { get; set; }
         public DateTime CreationTimestamp { get; set; }
+        [Required]
         public string UserName { get; set; }
+        [Required]
+        public string Legajo { get; set; }
     }
 }

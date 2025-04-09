@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Sortec.Infrastructure.Context;
 
@@ -11,9 +12,11 @@ using Sortec.Infrastructure.Context;
 namespace Sortec.Infrastructure.Migrations
 {
     [DbContext(typeof(SortecDbContext))]
-    partial class SortecDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250409213223_AddLegajoInUser")]
+    partial class AddLegajoInUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

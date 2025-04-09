@@ -8,6 +8,7 @@ using Sortec.Domain.Interface;
 using Sortec.Infrastructure.Context;
 using Sortec.Infrastructure.ExeptionHandling;
 using Sortec.Infrastructure.Helpers;
+using Sortec.Infrastructure.Middleware;
 using Sortec.Infrastructure.Repositories;
 using Sortec.Infrastructure.Security;
 using System.Text;
@@ -102,6 +103,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+//Middleware
+app.UseMiddleware<JwtMiddleware>();
 
 app.UseHttpsRedirection();
 

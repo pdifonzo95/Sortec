@@ -55,7 +55,7 @@ namespace Sortec.Application.Services
             }
             catch (Exception ex) 
             {
-                response.Status = true;
+                response.Status = false;
                 response.Message = "Ha ocurrido un error: " + ex.Message;
             }
 
