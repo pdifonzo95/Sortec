@@ -89,6 +89,7 @@ namespace Sortec.Application.Services
                     Password = _cryptoHelper.EncryptString(registerUserDTO.Password),
                     UserName = registerUserDTO.UserName,
                     PhoneNumber = registerUserDTO.PhoneNumber,
+                    Legajo = registerUserDTO.Legajo,
                     CreationTimestamp = DateTime.Now,
                     State = true
                 };

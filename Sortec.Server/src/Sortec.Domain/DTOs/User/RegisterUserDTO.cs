@@ -16,5 +16,7 @@ namespace Sortec.Domain.DTOs.User
         public string Email { get; set; }
         [Required]
         public int PhoneNumber { get; set; }
+        [Required]
+        public string Legajo { get; set; }
     }
 }
